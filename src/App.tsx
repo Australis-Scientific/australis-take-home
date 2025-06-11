@@ -1,21 +1,34 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SearchBar from "./components/searchBar";
 import Favorites from "./components/favorites";
 import type { PokemonData } from "./types/pokemon";
 
 const App: React.FC = () => {
-  const [favorites, setFavorites] = useState<PokemonData[]>([]);
+  // Initialize favorites from localStorage or set to an empty array
+  const [favorites, setFavorites] = useState<PokemonData[]>(() => {
+    const storedFavorites = localStorage.getItem("favorites");
+    return storedFavorites ? JSON.parse(storedFavorites) : [];
+  });
 
   const addToFavorites = (pokemon: PokemonData) => {
-    //if (favorites.some(fav => fav.name === pokemon.name)) return;
+    // TODO: Check if the pokemon is already in favorites
     setFavorites([...favorites, pokemon]);
   };
+
+  const removeFromFavorites = (name: string) => {
+    setFavorites(favorites.filter(fav => fav.name !== name));
+  }
+
+  useEffect(() => {
+    // Update localStorage whenever favorites change
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
 
   return (
     <div className="app">
       <SearchBar addToFavorites={addToFavorites} />
-      <Favorites favorites={favorites} />
+      <Favorites favorites={favorites} removeFromFavorites={removeFromFavorites}/>
     </div>
   )
 }
