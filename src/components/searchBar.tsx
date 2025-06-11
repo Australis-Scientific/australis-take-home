@@ -12,7 +12,11 @@ interface PokemonData {
     types: string[];
 }
 
-const searchBar = () => {
+interface SearchBarProps {
+    addToFavorites: (pokemon: PokemonData) => void;
+}
+
+const searchBar: React.FC<SearchBarProps> = ({addToFavorites}) => {
     const [searchInput, setSearchInput] = useState<string>('');
     const [results, setResults] = useState< PokemonData | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
@@ -74,6 +78,9 @@ const searchBar = () => {
                     <h2>{results.name}</h2>
                     <img src={results.image} alt={results.name} />
                     <p>Types: {results.types.join(', ')}</p>
+                    <button onClick={() => addToFavorites(results)}>
+                        Add to Favorites
+                    </button>
                 </div>
             )}
         </div>
