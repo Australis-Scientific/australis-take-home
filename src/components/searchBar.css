@@ -1,0 +1,54 @@
+/* Search bar container */
+.search-bar {
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  backdrop-filter: blur(4px);
+  gap: 1rem; /* Adds spacing between children */
+}
+
+
+/* Input field */
+.search-input {
+  color: #333;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: background-color 0.3s;
+}
+
+.search-input:focus {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Result area */
+.pokemon-result {
+  margin-top: 1rem; /* Additional safety spacing if needed */
+  text-align: center;
+}
+
+.pokemon-result img {
+  width: 100px;
+  height: 100px;
+}
+
+.pokemon-result button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pokemon-result button:hover {
+  background-color: #45a049;
+}

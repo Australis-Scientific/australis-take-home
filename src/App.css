@@ -25,10 +25,39 @@
   margin: 1rem auto; 
 } */
 
-@keyframes spin {
+/* @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+} */
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start;  /* Start from the top */
+  position: relative;       /* For positioning fixed elements */
+  padding-top: 20px;
 }
+
+.header-search-container {
+  position: fixed;
+  top: 35%;
+  left: 25%;
+  text-align: center;
+}
+
+.favorites-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  overflow-y: auto; /* Makes it scrollable independently */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+}
+
+
 
 #root {
   max-width: 1280px;

@@ -1,0 +1,44 @@
+/* Favorite item container */
+.fav-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between left content and button */
+    padding: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+/* Image and name container */
+.fav-item-info {
+    display: flex;
+    align-items: center;
+}
+
+/* Pokémon image */
+.fav-item-pic img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* Pokémon name */
+.fav-item-name {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+/* Remove button */
+.remove-button {
+    padding: 0.25rem 0.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #e02e2e;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.remove-button:hover {
+    background-color: #c32929;
+}

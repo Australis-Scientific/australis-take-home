@@ -13,6 +13,10 @@ const App: React.FC = () => {
 
   const addToFavorites = (pokemon: PokemonData) => {
     // TODO: Check if the pokemon is already in favorites
+    if (favorites.some(fav => fav.name === pokemon.name)) {
+      alert(`${pokemon.name} is already in your favorites!`);
+      return;
+    }
     setFavorites([...favorites, pokemon]);
   };
 
@@ -27,9 +31,13 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
-      <h1>PokéSearch</h1>
-      <SearchBar addToFavorites={addToFavorites} />
-      <Favorites favorites={favorites} removeFromFavorites={removeFromFavorites}/>
+      <div className="header-search-container">
+        <h1>PokéSearch</h1>
+        <SearchBar addToFavorites={addToFavorites} />
+      </div>
+      <div className="favorites-bar">
+        <Favorites favorites={favorites} removeFromFavorites={removeFromFavorites}/>
+      </div>
     </div>
   )
 }

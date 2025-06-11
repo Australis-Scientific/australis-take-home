@@ -1,4 +1,5 @@
 import React from 'react';
+import './favorites.css';
 
 interface PokemonData {
     name: string;
@@ -20,7 +21,9 @@ const Favorites: React.FC<FavoritesProps> = ({ favorites, removeFromFavorites })
             ) : (
                <div className="flex flex-wrap gap-4">
                     {favorites.map(fav => (
-                        <div key={fav.name} className="border p-2 rounded text-center shadow relative">
+                        <div key={fav.name} className="fav-item">
+                            <img src={fav.image} alt={fav.name} className="fav-item-pic" />
+                            <h4 className="fav-item-name">{fav.name}</h4>
                             <button
                                 className="remove-button"
                                 onClick={() => removeFromFavorites(fav.name)}
@@ -28,9 +31,6 @@ const Favorites: React.FC<FavoritesProps> = ({ favorites, removeFromFavorites })
                             >
                                 &times;
                             </button>
-                            <h4 className="capitalize">{fav.name}</h4>
-                            <img src={fav.image} alt={fav.name} className="w-16 h-16 mx-auto my-1" />
-                            
                         </div>
                     ))}
                 </div>
