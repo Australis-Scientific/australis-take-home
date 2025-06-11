@@ -71,6 +71,7 @@ const searchBar: React.FC<SearchBarProps> = ({addToFavorites}) => {
                 placeholder="Search for a Pokémon..."
                 className="search-input"
             />
+            {/* {loading && <div className="spinner"></div>}  */}
             {loading && <p>Loading...</p>}
             {error && <p className="error">{error}</p>}
             {results && (

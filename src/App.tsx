@@ -27,6 +27,7 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
+      <h1>PokéSearch</h1>
       <SearchBar addToFavorites={addToFavorites} />
       <Favorites favorites={favorites} removeFromFavorites={removeFromFavorites}/>
     </div>
