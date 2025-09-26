@@ -12,10 +12,10 @@ Follow these steps to get the project running locally:
 2. **Clone your forked repo** to your local machine:
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/pokedex-challenge.git
-   cd pokedex-challenge
+   git clone https://github.com/YOUR_USERNAME/australis-take-home.git
+   cd australis-take-home
    npm install
-   npm install
+   npm run dev
 
    ```
 
